@@ -8,7 +8,8 @@ package binærtsøgetrædiy;
 public class BinærtSøgeTræDIY {
 
     private BSTNode root;
-
+    
+    //Laver et tomt binært søgetræ, hvor root er null, og bruges som pointer(udgangspunkt)
     public BinærtSøgeTræDIY(BSTNode root) {
         this.root = null;
     }
@@ -28,6 +29,26 @@ public class BinærtSøgeTræDIY {
         }
     }
     
+    /**
+    * Størrelsen på det BST.
+    */
+    public int size() {
+        return (size(root));
+    }
+    
+    /**
+    * Størrelsen af en given gren.
+    * @param node Den gren du tæller fra.
+    */
+    protected int size(BSTNode node) {
+        if (node == null) {
+            return 0;
+        } else {
+            //1 = root + venstre side + højre side
+           return 1 + size(node.getLeft()) + size(node.getRight()); 
+        }
+    }
+    
     
 
     /**
@@ -41,6 +62,10 @@ public class BinærtSøgeTræDIY {
         dict.put("Anders", new Address("Overhøjen 34"));
         
     }
+
+    
+
+    
 
 
 
