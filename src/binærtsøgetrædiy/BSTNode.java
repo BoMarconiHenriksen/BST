@@ -6,10 +6,10 @@ package binærtsøgetrædiy;
  */
 public class BSTNode {
     
-    private String key; //Key er i dette træ en string
-    private Address value; //User data
-    private BSTNode left; //Link to left child
-    private BSTNode right; //Link to right child
+    String key; //Key er i dette træ en string
+    Address value; //User data
+    BSTNode left; //Link to left child
+    BSTNode right; //Link to right child
 
     public BSTNode(String key, Address value, BSTNode left, BSTNode right) {
         this.key = key;
@@ -25,32 +25,21 @@ public class BSTNode {
     
    public BSTNode() {
     }
-    
-    //Når root ikke længere er null kan vi bruge insert metoden.
-    protected void insert( String key, Address value, BSTNode node ) {
-    switch ( Integer.signum( key.compareToIgnoreCase( node.key ) ) ) {
-        case -1:
-            if ( node.left == null ) {
-                node.left = new BSTNode( key, value );
-            } else {
-                insert( key, value, node.left );
-            }
-            break;
-        case 0:
-            node.value = value;
-            break;
-        case 1:
-            if ( node.right == null ) {
-                node.right = new BSTNode( key, value );
-            } else {
-                insert( key, value, node.right );
-            }
-            break;
-    }
-}
-    
    
-    
-    
+   public BSTNode getLeft() {
+        return left;
+    }
+
+    public BSTNode getRight() {
+        return right;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public Address getValue() {
+        return value;
+    }
     
 }
